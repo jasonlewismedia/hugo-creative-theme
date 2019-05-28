@@ -1,0 +1,12 @@
+{{ "<!-- TAGLINE -->" | safeHTML }}
+<section id="tagline">
+    {{ with .Site.Params.tagline.slogan }}
+                <h1>{{ . | markdownify  }}</h1>
+            {{ end }}
+            {{ if and .Site.Params.tagline.slogan .Site.Params.tagline.subtitle }}
+                <hr>
+            {{ end }}
+            {{ with .Site.Params.tagline.subtitle }}
+                <p>{{ . | markdownify }}</p>
+            {{ end }}
+</section>
